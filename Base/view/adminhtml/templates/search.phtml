@@ -1,0 +1,47 @@
+<?php
+/**
+ * @author Awd Team
+ * @copyright Copyright (c) 2020 Awd (https://www.advancedwebsitedesign.co.uk)
+ * @package Awd_Base
+ */
+?>
+<?php
+/** @var \Awd\Base\Block\Search $block */
+?>
+<div class="ambase-search-container">
+    <div class="ambase-title"><?= $block->escapeHtml(__('Discover the functionality to level-up your store'))?></div>
+    <div class="ambase-wrapper">
+        <input id="awd-search-input"
+               class="ambase-input"
+               type="search"
+               onkeypress="awdSearch.submit(event)"
+               placeholder="<?= $block->escapeHtml(__('What is your challenge? e.g. Site Speed, Search...'))?>" />
+        <button class="ambase-button" type="button" onclick="awdSearch.submit(event)">
+            <?= $block->escapeHtml(__('Search')) ?>
+        </button>
+    </div>
+</div>
+<script type="text/javascript">
+    var awdSearch = {
+        submit: function (event) {
+            if (event instanceof KeyboardEvent && event.keyCode !== 13) {
+                return false;
+            }
+            event.preventDefault();
+            var searchValue = document.getElementById('awd-search-input').value,
+                url = '<?= $block->escapeUrl($block->getSearchBaseUrl()) ?>'.replace(/&amp;/g, "&")
+                    .replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+
+            if (searchValue) {
+                searchValue = encodeURIComponent(searchValue);
+                url += searchValue + '<?= $block->escapeUrl($block->getSearchUrlParams()) ?>'
+                    .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+            }
+            window.open(url);
+
+            document.getElementById('awd-search-input').value = '';
+
+            return false;
+        }
+    }
+</script>

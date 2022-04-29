@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Awd Team
+* @copyright Copyright (c) 2021 Awd (https://www.advancedwebsitedesign.co.uk)
+* @package Awd_Base
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_render_before">
+        <observer name="Awd_Base::add_theme_class_name" instance="Awd\Base\Observer\AddBodyClassName" />
+    </event>
+</config>

@@ -1,0 +1,22 @@
+<?php
+/**
+* @author Awd Team
+* @copyright Copyright (c) 2021 Awd (https://www.advancedwebsitedesign.co.uk)
+* @package Awd_Base
+*/
+?>
+<?php
+/**
+ * @var \Magento\Backend\Block\Template $block
+ */
+?>
+<script>
+    require([
+        "jquery"
+    ], function($){
+        $(document).ready(function () {
+            $('a[href*="https://advancedwebsitedesign.co.uk"], a[href*="http://advancedwebsitedesign.co.uk"], a[href*="https://marketplace.magento.com"]')
+                .attr('target', '_blank');
+        });
+    });
+</script>

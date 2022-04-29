@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Awd Team
+* @copyright Copyright (c) 2021 Awd (https://www.advancedwebsitedesign.co.uk)
+* @package Awd_Base
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="awd_base">
+        <job name="ambase_feeds_refresh" instance="Awd\Base\Cron\RefreshFeedData" method="execute">
+            <schedule>0 * * * *</schedule>
+        </job>
+    </group>
+</config>

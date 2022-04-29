@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Awd Team
+* @copyright Copyright (c) 2021 Awd (https://www.advancedwebsitedesign.co.uk)
+* @package Awd_Base
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="awd" translate="label" sortOrder="999999" class="awd-tab ambase-tab-container">
+            <label>Awd Extensions</label>
+        </tab>
+        <section id="awd_base" translate="label" type="text" sortOrder="-5000" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label><![CDATA[Extensions &amp; Notifications]]></label>
+            <tab>awd</tab>
+            <resource>Awd_Base::config</resource>
+        </section>
+    </system>
+</config>

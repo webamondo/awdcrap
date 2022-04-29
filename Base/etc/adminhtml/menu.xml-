@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Awd Team
+* @copyright Copyright (c) 2021 Awd (https://www.advancedwebsitedesign.co.uk)
+* @package Awd_Base
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MenuAwd_Base::menu"
+             title="Awd"
+             module="Awd_Base"
+             translate="title"
+             sortOrder="69"
+             resource="MenuAwd_Base::menu"/>
+        <add id="Awd_Base::marketplace"
+             title="Awd Marketplace"
+             module="Awd_Base"
+             translate="title"
+             sortOrder="9999"
+             action="ambase/marketplace"
+             parent="MenuAwd_Base::menu"
+             resource="Awd_Base::marketplace"/>
+        <add id="Awd_Base::extensions"
+             title="Modules &amp; Notifications"
+             module="Awd_Base"
+             translate="title"
+             sortOrder="9998"
+             action="adminhtml/system_config/edit/section/awd_base"
+             parent="MenuAwd_Base::menu"
+             resource="Awd_Base::config"/>
+    </menu>
+</config>
